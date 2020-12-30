@@ -5,7 +5,17 @@
 
 // Write a macro that passes the test! No hints this time, you can do it!
 
-// I AM NOT DONE
+mod macros {
+    #[macro_export]
+    macro_rules! my_macro {
+        ("world") => {
+            "Hello world!";
+        };
+        ($val:expr) => {
+            format!("You said {}", $val);
+        }
+    }
+}
 
 fn main() {
     if my_macro!("world!") != "Hello world!" {
